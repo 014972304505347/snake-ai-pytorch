@@ -24,7 +24,7 @@ BLUE2 = (0, 100, 255)
 BLACK = (0,0,0)
 
 BLOCK_SIZE = 20
-SPEED = 40
+SPEED = 200
 
 class SnakeGameAI:
 
@@ -87,6 +87,7 @@ class SnakeGameAI:
             reward = 10
             self._place_food()
         else:
+            reward = -0.01 # small penalty if time is wasted.
             self.snake.pop()
         
         # 5. update ui and clock
